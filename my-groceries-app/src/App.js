@@ -1,30 +1,15 @@
-import logo from "./logo.svg";
+// import logo from "./logo.svg";
+import { useState } from "react";
 import "./App.css";
-import List from "./components/List";
+import Container from "./components/Container";
 
 function App() {
+  const [typeOfList] = useState("groceryList");
   return (
     <div className="App">
-      <List />
+      <Container className="container" type={typeOfList} />
     </div>
   );
 }
 
 export default App;
-
-// {
-//   /* <header className="App-header">
-//   <img src={logo} className="App-logo" alt="logo" />
-//   <p>
-//     Edit <code>src/App.js</code> and save to reload.
-//   </p>
-//   <a
-//     className="App-link"
-//     href="https://reactjs.org"
-//     target="_blank"
-//     rel="noopener noreferrer"
-//   >
-//     Learn React
-//   </a>
-// </header> */
-// }
