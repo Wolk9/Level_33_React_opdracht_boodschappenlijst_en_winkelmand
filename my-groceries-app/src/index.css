@@ -12,27 +12,42 @@ code {
     monospace;
 }
 
-container {
+.container {
   display: flex;
-}
-
-.list {
-  flex: 0 1 auto;
   justify-content: center;
   align-items: flex-start;
+  align-content: center;
+  flex-wrap: wrap;
+}
+
+.list-container {
+  margin: 10px;
+}
+
+.list-container>h3 {}
+
+.list {
   display: flex;
+  flex-direction: column;
+  align-content: flex-start;
+  align-items: flex-start;
+  justify-content: left;
+  flex-wrap: wrap;
+
 }
 
 .list-item {
+  position: inherit;
   list-style: none;
   color: whitesmoke;
   min-width: 200px;
   padding: 10px;
-  flex-flow: column nowrap;
-  justify-content: flex-start;
-  align-items: flex-start;
-  flex: 0 1 auto;
+  margin: 0px;
   text-align: left;
+}
+
+ul {
+  padding-inline-start: 0px;
 }
 
 .list-item:nth-child(2n - 1) {
