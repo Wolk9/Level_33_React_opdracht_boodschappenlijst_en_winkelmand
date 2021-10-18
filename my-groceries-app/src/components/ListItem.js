@@ -14,7 +14,7 @@ function ListItem(props) {
           <FontAwesomeIcon icon={faTrash} />
         </div>
       ) : (
-        ""
+        " "
       )}
     </li>
   );
