@@ -19,14 +19,17 @@ function Container() {
   };
 
   const handleDeleteItem = (id) => {
-    // console.log("delete ", id);
+    console.log("delete ", id);
     const newList = groceryItems.filter((item) => item.id !== id.id);
     setGroceryItems(newList);
   };
 
   const clickItem = (id) => {
     console.log("ClickItem", id);
-    setShoppingCartItem([...shoppingCartItem], id);
+    const newSLItem = groceryItems.filter((item) => item.id === id.id);
+    const newSLIList = shoppingCartItem.concat(newSLItem);
+    setShoppingCartItem(newSLIList);
+    handleDeleteItem(id);
   };
 
   return (
