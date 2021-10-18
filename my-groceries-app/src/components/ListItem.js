@@ -6,11 +6,17 @@ function ListItem(props) {
   console.log(props);
   return (
     <li key={props.id} id={props.id} className="list-item" value={props.title}>
-      <div className="list-item-part" onClick={props.clickItem}>
+      <div
+        className="list-item-part"
+        onClick={() => props.clickItem(props.item)}
+      >
         {props.item.title}
       </div>
       {props.title === "Boodschappenlijst" ? (
-        <div className="list-trashcan-part" onClick={props.handleDeleteItem}>
+        <div
+          className="list-trashcan-part"
+          onClick={() => props.handleDeleteItem(props.item)}
+        >
           <FontAwesomeIcon icon={faTrash} />
         </div>
       ) : (

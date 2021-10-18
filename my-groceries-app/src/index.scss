@@ -55,7 +55,7 @@ code {
   justify-content: space-between;
   position: inherit;
   list-style: none;
-  color: wheat
+  color: wheat;
   min-width: 200px;
   padding: 10px;
   margin: 0px;
@@ -67,11 +67,11 @@ code {
 }
 
 .list-item-part {
-  min-width: 85%;
+  min-width: 90%;
 }
 
 .list-trashcan-part {
-  width: 15%
+  width: 10%;
   z-index: 100;
   color: wheat;
 

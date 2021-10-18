@@ -50,7 +50,7 @@ code {
   justify-content: space-between;
   position: inherit;
   list-style: none;
-  color: whitesmoke;
+  color: wheat;
   min-width: 200px;
   padding: 10px;
   margin: 0px;
@@ -62,10 +62,15 @@ code {
 }
 
 .list-item-part {
+  min-width: 90%;
+}
+
+.list-trashcan-part {
+  width: 10%;
   z-index: 100;
   color: wheat;
 }
-.list-item-part:hover {
+.list-trashcan-part:hover {
   color: white;
 }
 
