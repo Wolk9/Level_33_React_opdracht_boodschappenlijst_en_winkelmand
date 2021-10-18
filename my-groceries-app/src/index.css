@@ -79,14 +79,31 @@ ul {
           padding-inline-start: 0px;
 }
 
-.list-item:nth-child(2n-1) {
+.list-item-form {
+  display: flex;
+  justify-content: space-between;
+  position: inherit;
+  list-style: none;
+  color: wheat;
+  min-width: 200px;
+  min-height: 20px;
+  padding: 10px;
+  margin: 0px;
+  margin-bottom: -16px;
+  text-align: left;
+  background-color: palevioletred;
+  border-bottom: 3px solid thistle;
+  border-radius: 10px 10px 10px 10px;
+}
+
+.list-item:nth-child(2n-2) {
   background-color: lightcoral;
   border-bottom: 3px solid thistle;
   border-radius: 2px 2px 10px 10px;
 }
 
-.list-item:nth-child(2n-2) {
+.list-item:nth-child(2n-3) {
   background-color: coral;
   border-bottom: 3px solid thistle;
-  border-radius: 2px 2px 10px 10px;
+  border-radius: 10px 10px 2px 2px;
 }/*# sourceMappingURL=index.css.map */
