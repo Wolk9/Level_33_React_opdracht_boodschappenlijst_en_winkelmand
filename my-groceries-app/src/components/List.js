@@ -1,8 +1,51 @@
 import React from "react";
 import ListItem from "./ListItem";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faPlus,
+  faDumpster,
+  faShoppingCart,
+  faClipboardList
+} from "@fortawesome/free-solid-svg-icons";
 
-import { faPlus, faDumpster } from "@fortawesome/free-solid-svg-icons";
+function FirstElementOfList(props) {
+  props = props.props;
+  return (
+    <li className="list-item-form">
+      {props.title === "Boodschappenlijst" && (
+        <>
+          <form onSubmit={props.createItem}>
+            <input
+              value={props.userInput}
+              type="text"
+              id="newGLinput"
+              name="text"
+              onChange={props.handleChange}
+              placeholder="Wat mist er nog?"
+            />
+          </form>
+          <div
+            className="list-trashcan-part"
+            onClick={() => props.addItem(props.userInput)}
+          >
+            <FontAwesomeIcon icon={faPlus} />
+          </div>
+        </>
+      )}
+      {props.title === "Winkelwagen" && (
+        <>
+          <div>TrashAll</div>
+          <div
+            className="list-trashcan-part"
+            onClick={() => props.handleDeleteAll(props.title)}
+          >
+            <FontAwesomeIcon icon={faDumpster} />
+          </div>
+        </>
+      )}
+    </li>
+  );
+}
 
 function List(props) {
   const itemsList = props.list.map((item) => (
@@ -13,38 +56,30 @@ function List(props) {
       handleDeleteItem={props.handleDeleteItem}
       clickItem={props.clickItem}
       createItem={props.createItem}
+      addItem={props.addItem}
+      badInput={props.badInput}
     />
   ));
 
   return (
-    <div className="list-container">
-      <h3>{props.title}</h3>
+    <div
+      className={
+        props.badInput === true ? "list-container badinput" : "list-container"
+      }
+    >
+      <h3>
+        {props.title} {props.title === "Winkelwagen" && props.list.length}
+      </h3>
       <ul className="list">
-        <li className="list-item-form">
-          {props.title === "Boodschappenlijst" && (
-            <form>
-              <input type="text" id="newGLinput" name="text" />
-
-              <div
-                className="list-trashcan-part"
-                onClick={() => props.handleDeleteItem(props.item, props.title)}
-              >
-                <FontAwesomeIcon icon={faPlus} />
-              </div>
-            </form>
-          )}
-          {props.title === "Winkelwagen" && (
-            <div
-              className="list-trashcan-part"
-              onClick={() => props.handleDeleteItem(props.item, props.title)}
-            >
-              <FontAwesomeIcon icon={faDumpster} />
-              Trash
-            </div>
-          )}
-        </li>
+        <FirstElementOfList props={props} />
+        {props.list.length !== 0 ? (
+          itemsList
+        ) : props.title === "Winkelwagen" ? (
+          <FontAwesomeIcon className="big-icon" icon={faShoppingCart} />
+        ) : (
+          <FontAwesomeIcon className="big-icon" icon={faClipboardList} />
+        )}
       </ul>
-      <ul className="list">{itemsList}</ul>
     </div>
   );
 }
