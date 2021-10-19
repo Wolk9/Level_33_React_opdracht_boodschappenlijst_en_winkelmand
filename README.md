@@ -4,7 +4,7 @@ In this assignment I have learned how to apply my React knwoledge so far. By far
 
 ### Teach the Teacher
 
-I have managed to coop with the Lifting up State difficulties by forcing myself to write a tutorial so that I had to be able to explain the principle to others. I have used an analogy of Donald Duck and his nevews who are exchanging moods and number of coins. You can see the tutorial here:
+I have managed to coop with the Lifting up State difficulties by forcing myself to write a tutorial so that I had to be able to explain the principle to others. I have used an analogy of Donald Duck and his nephews who are exchanging moods and number of coins. You can see the tutorial here:
 
 https://martindebes.nl/lifting-up-state-reactjs/
 
