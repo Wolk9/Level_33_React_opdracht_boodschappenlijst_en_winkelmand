@@ -68,7 +68,10 @@ function List(props) {
       }
     >
       <h3>
-        {props.title} {props.title === "Winkelwagen" && props.list.length}
+        {props.title}{" "}
+        {props.title === "Winkelwagen" &&
+          props.list.length !== 0 &&
+          props.list.length}
       </h3>
       <ul className="list">
         <FirstElementOfList props={props} />
